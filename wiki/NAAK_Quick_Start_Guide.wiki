@@ -1,0 +1,34 @@
+#summary Naak quick start guide.
+
+= Quick Start Guide =
+
+*Step 1
+
+Download Naak at http://code.google.com/p/naak/
+
+*Step 2
+
+Reference the following dll's from your UI project:
+
+**1.Tjoc.Web.Validator
+
+**2.Naak.HtmlRules
+
+*Step 3
+
+Add the following code to the "configSections" section in your webconfig file
+<section name="validatorModule" type="Tjoc.Web.Validator.ValidatorConfigHandler, Tjoc.Web.Validator"/>
+
+*Step 4
+
+Add the following code to the "configuration" section in your webconfig file
+<validatorModule enabled="true" mode="Custom" customRenderer="Naak.HtmlRules.Impl.AccessibilityRenderer,Naak.HtmlRules"> <pageExtensions> <add value=""/> </pageExtensions> <contentTypes> <add value="text/html"/> </contentTypes> </validatorModule>
+
+*Step 5
+
+Add the following code to the "configuration" section in your webconfig file
+
+<httpModules> <add type="Tjoc.Web.Validator.ValidatorModule, Tjoc.Web.Validator" name="ValidatorModule"/> <add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/> <add name="UrlRoutingModule" type="System.Web.Routing.UrlRoutingModule, System.Web.Routing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" /> </httpModules>
+
+
+For a working example, download the source code. A sample UI is included with the project named "Naak.ExampleUI".
