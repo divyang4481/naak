@@ -26,9 +26,11 @@ Add the following code to the "configuration" section in your webconfig file
 
 *Step 5
 
-Add the following code to the "configuration" section in your webconfig file
+Add the following code to the "httpModules" section in your webconfig file
 
-<httpModules> <add type="Tjoc.Web.Validator.ValidatorModule, Tjoc.Web.Validator" name="ValidatorModule"/> <add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/> <add name="UrlRoutingModule" type="System.Web.Routing.UrlRoutingModule, System.Web.Routing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" /> </httpModules>
+<add type="Tjoc.Web.Validator.ValidatorModule, Tjoc.Web.Validator" name="ValidatorModule"/> 
 
+*Step 6
+Add the xhtml1-transitional.dtd file to the root of your UI Project and the validator_module_license.txt file to the root of your solution. Both of these files can be found in NAAK source code.
 
 For a working example, download the source code. A sample UI is included with the project named "Naak.ExampleUI".
