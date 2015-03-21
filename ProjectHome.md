@@ -1,0 +1,11 @@
+The .NET Accessibility Analysis Kit (NAAK) is designed to allow compliance with the US Rehabilitation Act, Section 508.  This law lays out several web development guidelines to ensure web applications are accessible by people with disabilities.  Most of the guidelines apply to blindness, but others apply to deafness, color-blindness, motor impairments, and epilepsy.
+
+The Americans with Disabilities Act provides protection as well.
+
+There are numerous free and commercial products to help ensure Section 508 compliance.  Most of the free products come in the form of a browser toolbar (such as the popular WAVE toolbar: http://wave.webaim.org/toolbar) or website to which you can submit a URL for validation.  While these are excellent tools, they all share a common limitation: the accessibility checking they provide can't be accessed by an automated user interface test (such as one written in WATiN, WATiR, or Selenium).  The toolbars are designed for human use and the validation websites require that your site be deployed publicly and not include any login-based security.
+
+NAAK addresses this challenge by placing a banner across the bottom of each page in your web application to notify you of any known accessibility issues (for example, an img tag without an alt attribute).  This helps ensure compliance in two ways.  First, it clearly exposes accessibility issues to each developer, QA analyst, and application reviewer.  Second, and more importantly, because it is returned as HTML with each page, it can be checked using any web user interface testing framework.
+
+The one major caveat is that the tool only works with XHTML-compliant sites.  Before checking for accessibility issues, it validates the site is XHTML compliant using Josh Twist's Validator Module: http://www.thejoyofcode.com/Validator_Module.aspx.
+
+NAAK was inspired by and derived it's name from another open-source project named Ruby Accessibility Analysis Toolkit (RAAKT), http://www.peterkrantz.com/raakt/wiki/.  After all, why should those Ruby guys have all the best tools and libraries?
